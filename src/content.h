@@ -3,12 +3,24 @@
 
 #include <QStackedWidget>
 #include <QPushButton>
-#include
+
+class BaseInfo;
+class Contact;
+class Detail;
 
 class Content : public QFrame
 {
+    Q_OBJECT
 public:
-    Content();
+    Content(QWidget *parent=0);
+
+    QStackedWidget *m_stack;
+private:    
+    QPushButton *m_amendBtn;
+    QPushButton *m_closeBtn;
+    BaseInfo *m_baseInfo;
+    Contact *m_contact;
+    Detail *m_detail;
 };
 
 #endif // CONTENT_H
